@@ -1,6 +1,7 @@
 # EX01 Developing a Simple Webserver
 
-# Date:
+# Date:17.09.2025
+
 # AIM:
 To develop a simple webserver to serve html pages and display the configuration details of laptop.
 
@@ -21,6 +22,28 @@ Serving the HTML pages.
 Testing the webserver.
 
 # PROGRAM:
+'''
+from django.shortcuts import render
+from http.server import HTTPServer,BaseHTTPRequestHandler
+content ='''<html><h1>Hello</h1></html>'''
+class MyServer(BaseHTTPRequestHandler):
+    def do_GET(self):
+        print("Get request recieved...")
+        self.send_response(200)
+        self.send_header("content-type","text/html")
+        self.end_headers()
+        self.wfile.write(content.encode())
+print("This is my webserver")
+server_address=('',8000)
+httpd=HTTPServer(server_address,MyServer)
+httpd.serve_forever()
+
+'''
 # OUTPUT:
+![alt text](<Screenshot (1).png>)
+
+![alt text](<Screenshot (3).png>)
+
+
 # RESULT:
 The program for implementing simple webserver is executed successfully.
