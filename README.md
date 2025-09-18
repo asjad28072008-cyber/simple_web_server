@@ -25,7 +25,27 @@ Testing the webserver.
 '''
 from django.shortcuts import render
 from http.server import HTTPServer,BaseHTTPRequestHandler
-content ='''<html><h1>Hello</h1></html>'''
+content ='''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Experiment 1</title>
+</head>
+<body>
+
+    <h1 style="text-align :center;margin-top:12vh;font-weight:bold;" class="">Laptop Configuration Details</h1>
+    <p style="text-align: center;margin-top:9vh;font-size:larger;"><strong>* Laptop Name:</strong>HP Pavillion 15</p>
+    <p style="text-align: center;font-size:larger"><strong>CPU:</strong>13th Gen Intel(R) Core(TM) i5-1334U</p>
+    <p style="text-align: center;font-size:larger"><strong>RAM:</strong>16GB</p>
+    <p style="text-align: center;font-size:larger"><strong>Storage:</strong>512GB</p>
+    <p style="text-align: center;font-size:larger"><strong>Graphics Card:</strong>intel iRIS Xe</p>
+    <p style="text-align: center;font-size:larger"><strong>Display Resolution:</strong>1920x1080</p>
+    <p style="text-align: center;font-size:larger"><strong>Battery Life:</strong>7.5 to 10 hours</p>
+    <p style="text-align: center;font-size:larger"><strong>Ports:</strong>USB-C,HDMI,USB-A</p>
+    
+</body>
+</html>
+'''
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
         print("Get request recieved...")
@@ -40,7 +60,8 @@ httpd.serve_forever()
 
 '''
 # OUTPUT:
-![alt text](<Screenshot (1).png>)
+![alt text](<Screenshot (4).png>)
+
 
 ![alt text](<Screenshot (3).png>)
 
