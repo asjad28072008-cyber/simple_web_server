@@ -22,10 +22,10 @@ Serving the HTML pages.
 Testing the webserver.
 
 # PROGRAM:
-'''
+```
 from django.shortcuts import render
 from http.server import HTTPServer,BaseHTTPRequestHandler
-content =```
+content ='''
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +59,7 @@ content =```
 </body>
 </html>
 
-```
+'''
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
         print("Get request recieved...")
@@ -71,7 +71,7 @@ print("This is my webserver")
 server_address=('',8000)
 httpd=HTTPServer(server_address,MyServer)
 httpd.serve_forever()
-'''
+```
 
 # OUTPUT:
 ![alt text](<Screenshot (5).png>)
